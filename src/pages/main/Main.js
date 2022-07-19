@@ -9,7 +9,7 @@ import "../../assets/scss/Main.scss"
 const Main=()=>{
     
     
-    return (<div>
+    return (<div className="main">
         <Types/>
         <Items/>
         <Cart/>
