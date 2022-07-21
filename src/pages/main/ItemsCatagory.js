@@ -18,6 +18,7 @@ const ItemsCategoty=(props)=>{
                 product={product}
                 id={product.id} 
                 onAddProduct={props.onAddProduct}
+                onIncrease={props.onIncrease}
                 key={product.id}
                   />} ) ) :''}
     </div>);

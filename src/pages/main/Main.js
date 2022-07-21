@@ -3,36 +3,56 @@ import Items from "./Items";
 import Types from "./Types";
 import Cart from "./Cart";
 import "../../assets/scss/Main.scss"
+import Menu from "../sample"
 
 
 
 const Main=  ()=>{
-    const [data, setData] = useState(null);
+    const [data, setData] = useState(Menu);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const [cartProduct,setCartProduct]=useState(null)
-
-   useEffect(() => {
-        fetch(`https://myqa.fleksa.com/pyapi/26/menu`)
-         .then((response) => response.json())
-         .then((actualData) => {console.log(actualData)
-                setData(actualData);
+    const [cartProduct,setCartProduct]=useState([])
+   console.log(cartProduct)
+//    useEffect(() => {
+//         fetch(`https://myqa.fleksa.com/pyapi/26/menu`)
+//          .then((response) => response.json())
+//          .then((actualData) => {console.log(actualData)
+//                 setData(actualData);
                 
-        })
-        .then(setLoading(false))
-         .catch((err) => {
-          console.log(err.message);
-         });
-       }, []);
+//         })
+//         .then(setLoading(false))
+//          .catch((err) => {
+//           console.log(err.message);
+//          });
+//        }, []);
 
-    //    console.log(data,"data")
+       console.log(data,"data")
      const onAddProduct=(id)=>{
-        console.log(id);
-        
-            let obj = data["categories"].find(o => o.id === id);
-            // let obj2=obj[products].find()
-            console.log(obj);
+            var obj ;
+            var i=0;
+            do {
+                obj=data["categories"][i]["products"].find(o => o.id === id);
+                i++;
+              }
+              while (i < 21 && obj === undefined);
+            setCartProduct(old=>[...old,{name:obj.name_json.english,price:obj.price,id:id,qty:1}])
+            const addbut=document.getElementById(`${id}`);
+            addbut.style.display="none";
+            const incresebut=document.getElementById(`${id +"_a"}`)
+            incresebut.style.display="inline-block"
+    }
+    const handleIncrease=(id)=>{
+          console.log(id);
+            var cog=cartProduct.findIndex(checkid);
+            console.log(cog,"cog")
+            function checkid(p) {
+                return p.id==id;
+              }
+             let temp=cartProduct;
+             temp[cog].qty+=1;
+             setCartProduct(temp); 
+
 
 
     }
@@ -42,8 +62,9 @@ const Main=  ()=>{
                
          />
         <Items product_detail={data}
-        onAddProduct={onAddProduct} />
-        <Cart />
+        onAddProduct={onAddProduct}
+        onIncrease={handleIncrease} />
+        <Cart product_list={cartProduct}/>
 
     </div>);
         

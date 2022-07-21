@@ -8,6 +8,7 @@ const CategoryProudct=(props)=>{
        const price=props.product.price;
        const id=props.id;
        const onAddProduct=props.onAddProduct;
+       const onIncrease=props.onIncrease;
       //  console.log(props,"it")
     
    //  const toggle=(e)=>{
@@ -30,7 +31,11 @@ const CategoryProudct=(props)=>{
        </div> 
        <div className="cat-addbutton" >
          <button className="addbutton" id={id} onClick={()=>onAddProduct(id)}>ADD </button>
-         <span className="handleinput"><button className="minus">-</button> <span className="qty"  >1</span> <button className="plus">+</button> </span>
+         <span className="handleinput" id={id+"_a"}>
+            <button className="minus">-</button> 
+            <span className="qty"  >1</span> 
+            <button className="plus" onClick={()=>onIncrease(id)}>+</button> 
+         </span>
 
 
        </div>

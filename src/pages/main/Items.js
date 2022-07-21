@@ -21,6 +21,7 @@ const Items=(props)=>{
                 product={product}
                 id={product.id} 
                 onAddProduct={props.onAddProduct}
+                onIncrease={props.onIncrease}
                 key={product.id}
                   />} ) ) :<h1>Loading...</h1>}
        
