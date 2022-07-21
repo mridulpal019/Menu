@@ -37,13 +37,12 @@ const Types=(props)=>{
            className="search-bar"
          >
          </input>
-        {props.products === null && <h1> Loading</h1>}
         {catagories ? (catagories.map((product)=>{
                 return <Product 
                 name={product.name}
                 id={product.id} 
                 key={product.id}
-                  />} ) ) :'not'}
+                  />} ) ) :<h1 style={{textAlign:'center'}}> Loading...</h1>}
         
        
       

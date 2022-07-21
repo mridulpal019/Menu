@@ -1,26 +1,41 @@
 import React,{useState} from "react";
-// import { useNavigate } from "react-router-dom";
-
+import "../../assets/scss/CategoryProduct.scss"
 
 const CategoryProudct=(props)=>{
-    //  const [categoryProudct,setCategoryProduct]=useState(props.product.products);
-    //  console.log(categoryProudct,"hii")   
-    //    const{id}=props.key
-    // const name=props.product.name_json.english;
-    // const desc=props.product.description_json.english;
-       console.log("key",props);
+ 
        const name=props.product.name_json.english;
        const desc=props.product.description_json.english;
-       const price=props.product.price
-    //    console.log(name,"it")
+       const price=props.product.price;
+       const id=props.id;
+       const onAddProduct=props.onAddProduct;
+      //  console.log(props,"it")
     
-    return (<div className="CategoryProudct">
-       <h6> {name}</h6>
+   //  const toggle=(e)=>{
+   //    e.preventDefault();
+   //    const addbutton=document.getElementById(`${id}`)
+   //    // console.log(addbutton,"add");
+   //    // addbutton.css.display="none"
+
+
+   //  };
+
+    return (<>
+    <hr/>
+    <div className="CategoryProduct">
+      
+      <div className="cat-product">
+       <h1> {name}</h1>
        <p>{desc}</p>
-       <small>{price} $</small>
-        
-       {/* <p>hi</p> */}
-    </div>);
+       <h1>{price} $</h1>
+       </div> 
+       <div className="cat-addbutton" >
+         <button className="addbutton" id={id} onClick={()=>onAddProduct(id)}>ADD </button>
+         <span className="handleinput"><button className="minus">-</button> <span className="qty"  >1</span> <button className="plus">+</button> </span>
+
+
+       </div>
+    </div>
+    </>);
         
     }
 
