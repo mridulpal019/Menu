@@ -6,7 +6,7 @@ const ItemsCategoty=(props)=>{
      const [categoryProduct,setCategoryProduct]=useState(props.product.products);
     const name=props.product.name_json.english;
     const desc=props.product.description_json.english;
-    
+    console.log(categoryProduct,"pp")
     return (<div className="ItemsCategoty">
       <div className="category-head">
        <h1 > {name}</h1>
@@ -19,6 +19,7 @@ const ItemsCategoty=(props)=>{
                 id={product.id} 
                 onAddProduct={props.onAddProduct}
                 onIncrease={props.onIncrease}
+                onDecrease={props.onDecrease}
                 key={product.id}
                   />} ) ) :''}
     </div>);

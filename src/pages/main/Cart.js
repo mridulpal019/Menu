@@ -25,6 +25,8 @@ const Cart=(props)=>{
                 price={product.price}
                 id={product.id} 
                 qty={product.qty}
+                onIncrease={props.onIncrease}
+                onDecrease={props.onDecrease}
                 key={product.id}
                   />} ) ) :  <div className="empty"> <img src={emptylogo}></img>
                   <h2>Please select at least one product to place an order</h2></div>

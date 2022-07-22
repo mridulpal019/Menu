@@ -14,14 +14,18 @@ const Items=(props)=>{
         }
         setProducts(productList);
     }
+    // console.log(props.product_detail.sides,"sides");
   
     return (<div className="items">
         {products ? (products.map((product)=>{
                 return <ItemsCategoty 
                 product={product}
+                sides={props.product_detail.sides}
+                parts={props.product_detail.parts}
                 id={product.id} 
                 onAddProduct={props.onAddProduct}
                 onIncrease={props.onIncrease}
+                onDecrease={props.onDecrease}
                 key={product.id}
                   />} ) ) :<h1>Loading...</h1>}
        

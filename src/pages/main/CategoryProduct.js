@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import "../../assets/scss/CategoryProduct.scss"
+import Choice from "./Choice";
 
 const CategoryProudct=(props)=>{
  
@@ -9,7 +10,8 @@ const CategoryProudct=(props)=>{
        const id=props.id;
        const onAddProduct=props.onAddProduct;
        const onIncrease=props.onIncrease;
-      //  console.log(props,"it")
+       const onDecrease=props.onDecrease;
+      //  console.log(props.product,"it")
     
    //  const toggle=(e)=>{
    //    e.preventDefault();
@@ -32,13 +34,26 @@ const CategoryProudct=(props)=>{
        <div className="cat-addbutton" >
          <button className="addbutton" id={id} onClick={()=>onAddProduct(id)}>ADD </button>
          <span className="handleinput" id={id+"_a"}>
-            <button className="minus">-</button> 
-            <span className="qty"  >1</span> 
+            <button className="minus" onClick={()=>onDecrease(id)}>-</button> 
+            <span className="qty" id={id+"_q"} data-qty={String(1)} >1</span> 
             <button className="plus" onClick={()=>onIncrease(id)}>+</button> 
          </span>
 
 
        </div>
+    </div>
+    <div className="choice">
+    {props.product.choice.length>1 ? (props.product.choice.map((product)=>{
+                return <Choice 
+                name={product.name_json.english}
+                id={product.id} 
+                data={product}
+               //  onAddProduct={props.onAddProduct}
+               //  onIncrease={props.onIncrease}
+               //  onDecrease={props.onDecrease}
+                key={product.id}
+                  />} ) ) :''}
+
     </div>
     </>);
         
