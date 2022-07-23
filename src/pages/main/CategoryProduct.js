@@ -11,7 +11,7 @@ const CategoryProudct=(props)=>{
        const onAddProduct=props.onAddProduct;
        const onIncrease=props.onIncrease;
        const onDecrease=props.onDecrease;
-      //  console.log(props.product,"it")
+       console.log(props.product,"it")
     
    //  const toggle=(e)=>{
    //    e.preventDefault();
@@ -42,19 +42,24 @@ const CategoryProudct=(props)=>{
 
        </div>
     </div>
-    <div className="choice">
-    {props.product.choice.length>1 ? (props.product.choice.map((product)=>{
+   
+    {props.product.choice.length>0 ?
+    <div className="choice-box">
+     {(props.product.choice.map((product)=>{
                 return <Choice 
                 name={product.name_json.english}
                 id={product.id} 
                 data={product}
+                parts={props.parts}
+                sides={props.sides}
                //  onAddProduct={props.onAddProduct}
                //  onIncrease={props.onIncrease}
                //  onDecrease={props.onDecrease}
                 key={product.id}
-                  />} ) ) :''}
+                  />
+                  } ) )}</div> :''}
 
-    </div>
+
     </>);
         
     }

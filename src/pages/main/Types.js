@@ -37,13 +37,14 @@ const Types=(props)=>{
            className="search-bar"
          >
          </input>
+         <div className="types-list">
         {catagories ? (catagories.map((product)=>{
                 return <Product 
                 name={product.name}
                 id={product.id} 
                 key={product.id}
                   />} ) ) :<h1 style={{textAlign:'center'}}> Loading...</h1>}
-        
+        </div>
        
       
     </div>);

@@ -1,4 +1,25 @@
 .types{
     width:20%;
     text-align: right;
+    
+    .types-list{
+        overflow: scroll;
+        overflow-x: hidden;
+        height: 80vh;
+        .product{
+            a{
+                text-decoration: none;
+                color: black;
+            }
+
+        }
+        .product:active{
+                 background-color: black;
+                 color: white;
+                 a{
+                    text-decoration: none;
+                    color: white;
+                }
+        }
+    }
 }

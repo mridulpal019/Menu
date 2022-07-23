@@ -1,3 +1,8 @@
 .items{
     width: 40%;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 80vh;
+   
 }
+::-webkit-scrollbar{display:none;}
