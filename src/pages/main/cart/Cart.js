@@ -23,6 +23,7 @@ const Cart=(props)=>{
                 return <CartItem 
                 name={product.name}
                 price={product.price}
+                desc={product.desc}
                 id={product.id} 
                 qty={product.qty}
                 onIncrease={props.onIncrease}

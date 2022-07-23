@@ -29,7 +29,12 @@ const Main=  ()=>{
           console.log(err.message);
          });
        }, []);
+     
+    const onMultiProduct=(obj,name,id)=>{
+      setCartProduct(old=>[...old,{name:name,price:obj.price,desc:obj.name,id:id,qty:1}])
+      console.log("hey");
 
+    }
     
      const onAddProduct=(id)=>{
             var obj ;
@@ -39,7 +44,7 @@ const Main=  ()=>{
                 i++;
               }
               while (i < 21 && obj === undefined);
-            setCartProduct(old=>[...old,{name:obj.name_json.english,price:obj.price,id:id,qty:1}])
+            setCartProduct(old=>[...old,{name:obj.name_json.english,price:obj.price,id:id,qty:1,desc:""}])
             const addbut=document.getElementById(`${id}`);
             addbut.style.display="none";
             const incresebut=document.getElementById(`${id +"_a"}`)
@@ -103,6 +108,7 @@ const Main=  ()=>{
          />
          {/* <CartProduct1.Provider value={cartProduct}> */}
         <Items product_detail={data}
+        onMultiProduct={onMultiProduct}
         onAddProduct={onAddProduct}
         onIncrease={handleIncrease} 
         onDecrease={handleDecrease}/>

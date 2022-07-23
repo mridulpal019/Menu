@@ -19,6 +19,7 @@ const ItemsCategoty=(props)=>{
                 id={product.id} 
                 parts={props.parts}
                 sides={props.sides}
+                onMultiProduct={props.onMultiProduct}
                 onAddProduct={props.onAddProduct}
                 onIncrease={props.onIncrease}
                 onDecrease={props.onDecrease}

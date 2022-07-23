@@ -11,10 +11,11 @@ const Parts=(props)=>{
 
 
     {props.parts[props.id] ? <>
-        <input type="radio" value={props.parts[props.id]['name_json'].english} name={props.option_name} /> 
+        <input type="radio" value={props.parts[props.id]['name_json'].english+'_'+props.parts[props.id].price}  name={props.option_name} /> 
     <div className="options-name">
         <div>{props.parts[props.id]['name_json'].english}</div>
-         <div>{props.parts[props.id].price}</div>
+         <div>{props.parts[props.id].price} $</div>
+
          </div>
          
          </>

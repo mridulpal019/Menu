@@ -2,10 +2,23 @@ import React,{useState,useEffect} from "react";
 import "../../../../assets/scss/Choice.scss"
 import Parts from "./Parts"
 import Options from "./Options";
+import Sides from "./Sides";
 
 const Choice=(props)=>{
-  
-    // console.log(props.data,"data",)
+       const [multi,setMutli]=useState(null);
+       
+       const addtoCart=(e)=>{
+        e.preventDefault();
+         props.ongetProduct(multi)
+
+       }
+       console.log(multi)
+        const onChange=(e)=>{
+            console.log(e.target.value)
+            let val=e.target.value.split("_");
+            setMutli({name:val[0],price:val[1]})
+        }
+   
     return (
     <>
    
@@ -14,10 +27,11 @@ const Choice=(props)=>{
     <div className="choice">
         <div className="choice-head">
      <div className="heading">
-    {props.name}
+    {props.name} 
     </div>
     <div className="option-type">Choose one</div>
     </div>
+    <div onChange={onChange}>
     {props.data.choice ?  (props.data.choice.map((option)=>{
                 return <Parts 
                 id={option}
@@ -26,9 +40,9 @@ const Choice=(props)=>{
                 sides={props.sides}
                 key={option}
                   /> }))  :"no" }
+</div>
 
-
-<div onChange="">
+<div onChange={onChange}>
         {/* <input type="radio" value="Male" name="gender" /> Male
         <input type="radio" value="Female" name="gender" /> Female
         <input type="radio" value="Other" name="gender" /> Other */}
@@ -42,10 +56,22 @@ const Choice=(props)=>{
                   />} ) ) :''}
 
 </div>
-side_products_json
+{/* <div onChange="">
+
+        
+      
+    {props.product.side_products_json ? (props.product.side_products_json.map((option)=>{
+                return <Sides 
+                option={option}
+                id={option.id} 
+                key={option.id}
+                  />} ) ) :''}
+
+</div> */}
+
 
 <hr/>
-<div className="add-but-opt">
+<div className="add-but-opt" onClick={addtoCart}>
     ADD
 </div>
 

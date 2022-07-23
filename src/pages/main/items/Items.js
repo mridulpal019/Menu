@@ -24,6 +24,7 @@ const Items=(props)=>{
                 parts={props.product_detail.parts}
                 id={product.id} 
                 onAddProduct={props.onAddProduct}
+                onMultiProduct={props.onMultiProduct}
                 onIncrease={props.onIncrease}
                 onDecrease={props.onDecrease}
                 key={product.id}

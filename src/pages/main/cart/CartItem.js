@@ -14,6 +14,7 @@ const onIncrease=props.onIncrease
   
     return (<div className="cart-item">
         <div className="cart-item-head"><h3>{props.name}</h3>
+        {props.desc}
         </div>
          <div className="increase-button">
             <button className="minus" onClick={()=>onDecrease(props.id)}>-</button> 

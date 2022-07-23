@@ -7,7 +7,7 @@ const Options=(props)=>{
   
     // console.log(props.data,"data",)
     return (<div className="Options">
-        <input type="radio" value={props.option.name_json.english} name={props.option_name} /> 
+        <input type="radio" value={props.option.name_json.english+"_"+props.option.price} name={props.option_name} /> 
    <div className="options-name"> 
     <div>
     {props.option.name_json.english}

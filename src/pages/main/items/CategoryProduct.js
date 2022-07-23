@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import "../../../assets/scss/CategoryProduct.scss"
 import Choice from "./choice/Choice";
+import Sides from "./choice/Sides";
 
 const CategoryProudct=(props)=>{
  
@@ -12,7 +13,15 @@ const CategoryProudct=(props)=>{
        const onIncrease=props.onIncrease;
        const onDecrease=props.onDecrease;
        console.log(props.product,"it")
-    
+      const onMultiProduct=props.onMultiProduct
+       
+      const getProduct=(product)=>{
+            console.log(product,"pr")
+            if(product.price ==0){
+              product.price=price
+            }
+            onMultiProduct(product,name,id);
+      }
    //  const toggle=(e)=>{
    //    e.preventDefault();
    //    const addbutton=document.getElementById(`${id}`)
@@ -45,16 +54,28 @@ const CategoryProudct=(props)=>{
    
     {props.product.choice.length>0 ?
     <div className="choice-box">
+      hi
      {(props.product.choice.map((product)=>{
                 return <Choice 
+                ongetProduct={getProduct}
                 name={product.name_json.english}
                 id={product.id} 
                 data={product}
                 parts={props.parts}
                 sides={props.sides}
-               //  onAddProduct={props.onAddProduct}
-               //  onIncrease={props.onIncrease}
-               //  onDecrease={props.onDecrease}
+                key={product.id}
+                  />
+                  } ) )}</div> :''}
+    
+    {props.product.side_products_json.length>0 ?
+    <div className="choice-box">
+     {(props.product.side_products_json.map((product)=>{
+                return <Sides 
+                name={product.name_json.english}
+      
+                data={product}
+                parts={props.parts}
+                sides={props.sides}
                 key={product.id}
                   />
                   } ) )}</div> :''}
