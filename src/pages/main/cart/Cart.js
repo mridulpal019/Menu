@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 // import { useNavigate } from "react-router-dom";
-import "../../assets/scss/Cart.scss"
-import emptylogo from "../../assets/images/cart_empty.png"
+import "../../../assets/scss/Cart.scss"
+import emptylogo from "../../../assets/images/cart_empty.png"
 import CartItem from "./CartItem";
 
 const Cart=(props)=>{

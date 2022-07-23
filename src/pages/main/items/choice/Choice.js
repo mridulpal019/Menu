@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-import "../../assets/scss/Choice.scss"
+import "../../../../assets/scss/Choice.scss"
 import Parts from "./Parts"
 import Options from "./Options";
 
@@ -42,6 +42,8 @@ const Choice=(props)=>{
                   />} ) ) :''}
 
 </div>
+side_products_json
+
 <hr/>
 <div className="add-but-opt">
     ADD

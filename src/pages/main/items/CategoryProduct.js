@@ -1,6 +1,6 @@
 import React,{useState} from "react";
-import "../../assets/scss/CategoryProduct.scss"
-import Choice from "./Choice";
+import "../../../assets/scss/CategoryProduct.scss"
+import Choice from "./choice/Choice";
 
 const CategoryProudct=(props)=>{
  

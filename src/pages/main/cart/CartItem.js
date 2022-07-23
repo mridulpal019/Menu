@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-import "../../assets/scss/CartItem.scss"
+import "../../../assets/scss/CartItem.scss"
 
 
 const CartItem=(props)=>{
@@ -9,8 +9,8 @@ const CartItem=(props)=>{
 //    }
 const onDecrease=props.onDecrease
 const onIncrease=props.onIncrease
- console.log(props.qty,"qtyytty")
-   console.log(props,"cart")
+//  console.log(props.qty,"qtyytty")
+//    console.log(props,"cart")
   
     return (<div className="cart-item">
         <div className="cart-item-head"><h3>{props.name}</h3>

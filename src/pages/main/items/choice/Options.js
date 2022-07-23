@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 // import "../../assets/scss/choice.scss"
 // import ItemsCategoty from "./ItemsCatagory";
-import "../../assets/scss/Options.scss"
+import "../../../../assets/scss/Options.scss"
 
 const Options=(props)=>{
   

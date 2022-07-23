@@ -1,7 +1,7 @@
 import React,{useState,useEffect, createContext} from "react";
-import Items from "./Items";
-import Types from "./Types";
-import Cart from "./Cart";
+import Items from "./items/Items";
+import Types from "./types/Types";
+import Cart from "./cart/Cart";
 import "../../assets/scss/Main.scss"
 import Menu from "../sample"
 

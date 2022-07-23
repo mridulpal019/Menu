@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import CategoryProudct from "./CategoryProduct";
-import "../../assets/scss/ItemsCategory.scss"
+import "../../../assets/scss/ItemsCategory.scss"
 
 const ItemsCategoty=(props)=>{
      const [categoryProduct,setCategoryProduct]=useState(props.product.products);
