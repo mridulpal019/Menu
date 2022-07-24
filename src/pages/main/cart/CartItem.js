@@ -20,7 +20,7 @@ const onIncrease=props.onIncrease
             <button className="minus" onClick={()=>onDecrease(props.id)}>-</button> 
          <span className="qty"  >{props.qty}</span>
           <button className="plus" onClick={()=> onIncrease(props.id)}>+</button></div>
-        <div className="price">{props.price}</div>
+        <div className="price">{props.price*props.qty} $</div>
         
        
     </div>);

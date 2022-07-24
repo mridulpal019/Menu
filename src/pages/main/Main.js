@@ -33,6 +33,8 @@ const Main=  ()=>{
     const onMultiProduct=(obj,name,id)=>{
       setCartProduct(old=>[...old,{name:name,price:obj.price,desc:obj.name,id:id,qty:1}])
       console.log("hey");
+      // const incresebut=document.getElementById(`${id +"_a"}`)
+      // incresebut.style.display="inline-block"
 
     }
     

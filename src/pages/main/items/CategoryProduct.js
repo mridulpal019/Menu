@@ -17,23 +17,46 @@ const CategoryProudct=(props)=>{
        
       const getProduct=(product)=>{
             console.log(product,"pr")
-            if(product.price ==0){
+            if(product == null){
+              product={name:name,price:price,desc:""}
+            }else if(product.price ==0 ){
               product.price=price
             }
             onMultiProduct(product,name,id);
+            let bbox=document.getElementById(`${id+"_choice"}`)
+            bbox.style.display="none";
+            const incresebut=document.getElementById(`${id +"_a"}`);
+            incresebut.style.display = "inline-block";
+
+
       }
-   //  const toggle=(e)=>{
-   //    e.preventDefault();
-   //    const addbutton=document.getElementById(`${id}`)
-   //    // console.log(addbutton,"add");
-   //    // addbutton.css.display="none"
+      const showOption=(e)=>{
+        e.preventDefault();
+        const incresebut=document.getElementById(`${id +"_a"}`)
 
 
-   //  };
+        let hidebox=document.getElementById(`${id}`)
+        if(props.product.choice.length>0){
+        hidebox.style.display="none";
+        }
+        let bbox=document.getElementById(`${id+"_choice"}`)
+        if(bbox.style.display === "none"){
+        bbox.style.display="block";}
+        else if(incresebut.style.display === "inline-block"){
+          bbox.style.display="none";
+          
+        }else{
+          bbox.style.display="none";
+          hidebox.style.display="block";
+
+        }
+
+      }
+
 
     return (<>
     <hr/>
-    <div className="CategoryProduct">
+    <div className="CategoryProduct" onClick={showOption}>
       
       <div className="cat-product">
        <h1> {name}</h1>
@@ -41,7 +64,9 @@ const CategoryProudct=(props)=>{
        <h1>{price} $</h1>
        </div> 
        <div className="cat-addbutton" >
-         <button className="addbutton" id={id} onClick={()=>onAddProduct(id)}>ADD </button>
+         <button className="addbutton" id={id}  onClick={props.product.choice.length>0 ? "" : ()=>onAddProduct(id)} >
+          ADD {props.product.choice.length>0? "+" :""}
+          </button>
          <span className="handleinput" id={id+"_a"}>
             <button className="minus" onClick={()=>onDecrease(id)}>-</button> 
             <span className="qty" id={id+"_q"} data-qty={String(1)} >1</span> 
@@ -53,8 +78,7 @@ const CategoryProudct=(props)=>{
     </div>
    
     {props.product.choice.length>0 ?
-    <div className="choice-box">
-      hi
+    <div className="choice-box" id={id+"_choice"} >
      {(props.product.choice.map((product)=>{
                 return <Choice 
                 ongetProduct={getProduct}
