@@ -28,7 +28,7 @@ const Types=(props)=>{
     }
     
     return (<div className="types">
-         <FontAwesomeIcon icon={faSearch} /> 
+         <FontAwesomeIcon icon={faSearch} id="search" /> 
          <input
            type="text"
            placeholder="Search"

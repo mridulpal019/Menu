@@ -11,3 +11,10 @@
     flex-direction: row;
     // margin-top: 600px;
 }
+
+@media (max-width: 960px){
+    .main{
+        display: flex;
+        flex-direction: column;
+    }
+ }

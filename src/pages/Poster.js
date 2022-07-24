@@ -22,7 +22,7 @@ const Poster=()=>{
              <h1>Smart Pizza Rodguru</h1>
              <p>Italian style pizza, Burgers, 100% Halal</p>
              <button onClick={showDineoption} id="pick-but"> <FontAwesomeIcon icon={faBagShopping} /> <span>Pick Up</span> <FontAwesomeIcon icon={ faPenToSquare } /></button>
-             <button onClick={showDineoption}  classname="dine-butt" id="dine-but"> <FontAwesomeIcon icon={faPlateWheat} /> <span>Dine IN</span> <FontAwesomeIcon icon={ faPenToSquare } /></button>
+             <button onClick={showDineoption}  className="dine-butt" id="dine-but"> <FontAwesomeIcon icon={faPlateWheat} /> <span>Dine IN</span> <FontAwesomeIcon icon={ faPenToSquare } /></button>
              </div>
              <div className="offer">
                 <h1>Offer</h1>
