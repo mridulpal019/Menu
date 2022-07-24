@@ -36,9 +36,19 @@
                 display: inline-block;
                 // background-color: inherit;
                 text-align: center;
-                background-color: yellow;
+                // background-color: yellow;
             }
           }
     }
 
+}
+@media (max-width: 960px){
+    .CategoryProduct{
+       flex-direction: column;
+       .cat-addbutton{
+        .addbutton{
+            width: 300px;
+        }
+       }
+    }
 }
